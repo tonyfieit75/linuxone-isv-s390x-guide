@@ -8,6 +8,8 @@ Ensure workload is architecture-neutral before build conversion.
 - RocksDB / embedded engines
 - C/C++ compiled modules
 - Compression libraries
+- Go binaries compiled for specific architecture
+- Go applications using CGO
 
 ### Endianness
 s390x is Big-Endian. Validate serialization logic.
