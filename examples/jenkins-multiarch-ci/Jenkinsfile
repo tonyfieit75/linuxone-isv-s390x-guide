@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build Multi-Arch Image') {
+            steps {
+                sh '''
+                docker buildx build                   --platform linux/amd64,linux/s390x                   --push -t repo/app:${BUILD_NUMBER} .
+                '''
+            }
+        }
+        stage('Deploy to OpenShift') {
+            steps {
+                sh 'oc apply -f deployment.yaml'
+            }
+        }
+    }
+}
