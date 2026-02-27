@@ -1,4 +1,4 @@
-# TAT Banking Demo Reference
+# TAT Banking Multi-Architecture Reference
 
 This demo illustrates:
 - Migration from amd64 to s390x
@@ -6,4 +6,7 @@ This demo illustrates:
 - Native build validation
 - CI integration pattern
 
-Used as reference implementation for ISV onboarding patterns.
+[Used as reference implementation for ISV onboarding patterns.
+](https://github.com/tonyfieit/TAT-Banking)
+
+Demonstrates multi-arch builds and OpenShift deployment patterns.
