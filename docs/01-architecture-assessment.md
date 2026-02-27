@@ -1,12 +1,19 @@
 # Architecture & Dependency Assessment
 
-Audit native components:
-- JNI libraries
-- Embedded native engines (RocksDB, snappy, lz4, zstd)
-- C/C++ dependencies
-- Architecture-specific binaries
+## Objective
+Ensure workload is architecture-neutral before build conversion.
 
-Validate:
-- Endianness (s390x is big-endian)
-- glibc compatibility
-- Hardcoded architecture assumptions
+### Native Dependencies
+- JNI libraries
+- RocksDB / embedded engines
+- C/C++ compiled modules
+- Compression libraries
+
+### Endianness
+s390x is Big-Endian. Validate serialization logic.
+
+### CPU Assumptions
+Remove x86-specific assembly.
+
+### glibc Compatibility
+Ensure alignment with RHEL 8/9.
