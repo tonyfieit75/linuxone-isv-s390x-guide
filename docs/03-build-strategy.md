@@ -1,11 +1,13 @@
-# Build Strategy
+# Build Strategy (QEMU vs Native)
 
-Development:
-- QEMU/buildx acceptable for CI iteration
+## QEMU
+- Acceptable for dev
+- Not suitable for GA artifacts
 
-Production:
-- Native s390x builds recommended for GA artifacts
+## Native Build
+- Required for production artifacts
+- Ensures CPU accuracy
 
-Hybrid model:
-- Dev via emulation
-- Release via native LinuxONE
+## Hybrid Model
+Dev via emulation
+Release via native LinuxONE
