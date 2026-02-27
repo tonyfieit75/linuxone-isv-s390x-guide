@@ -1,0 +1,18 @@
+name: Multi-Arch Build
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - run: |
+          docker buildx build             --platform linux/amd64,linux/s390x,linux/arm64,linux/ppc64le             --push -t repo/app:latest .
