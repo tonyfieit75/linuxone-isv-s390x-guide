@@ -6,3 +6,4 @@ Before GA:
 - CI pipeline operational
 - Multi-arch publishing enabled
 - Storage validated
+- Performance baseline documented
